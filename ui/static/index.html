@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech Assistant</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            height: calc(100vh - 100px);
+        }
+        .panel {
+            border: 2px solid;
+            padding: 15px;
+            overflow-y: auto;
+            background: #2a2a2a;
+            border-radius: 5px;
+        }
+        #transcript-panel {
+            border-color: #4CAF50;
+        }
+        #response-panel {
+            border-color: #2196F3;
+        }
+        .header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cost {
+            color: #888;
+        }
+        .controls button {
+            margin-left: 10px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background: #444;
+        }
+        .panel pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="controls">
+            <button onclick="resetAssistant()">Reset (Ctrl+R)</button>
+            <button onclick="togglePause()">Pause/Resume (Ctrl+P)</button>
+        </div>
+        <div class="cost">Cost: $0.0000</div>
+    </div>
+    <div class="container">
+        <div id="transcript-panel" class="panel">
+            <pre id="transcript"></pre>
+        </div>
+        <div id="response-panel" class="panel">
+            <pre id="response"></pre>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html> 
